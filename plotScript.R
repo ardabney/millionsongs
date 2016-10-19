@@ -13,41 +13,38 @@ regStartFadeOut<-lm(Year~StartFadeOut,data=dta)
 regEndFadeIn<-lm(Year~EndFadeIn,data=dta)
 
 # Plot data
-with(dta,plot(Tempo,Year))
+with(dta,plot(Tempo,Year,main="Year v. Tempo"))
 abline(coef(regTempo)) # draw trend line using coefficients of the linear regression
 
-with(dta,plot(Duration,Year))
+with(dta,plot(Duration,Year,main="Year v. Duration"))
 abline(coef(regDuration))
 
-with(dta,plot(TimeSignature,Year))
-abline(coef(regTimeSignature))
+with(dta,plot(TimeSignature,Year,main="Year v. Time Signature"))
 
-with(dta,plot(KeySignature,Year))
-abline(coef(regKeySignature))
+with(dta,plot(KeySignature,Year,main="Year v. Key Signature"))
 
-with(dta,plot(ArtistLatitude,Year))
-abline(coef(regArtistLatitude))
+with(dta,plot(ArtistLatitude,Year,main="Year v. Artist Latitude"))
 
-with(dta,plot(ArtistLongitude,Year))
-abline(coef(regArtistLongitude))
+with(dta,plot(ArtistLongitude,Year,main="Year v. Artist Longitude"))
 
-with(dta,plot(StartFadeOut,Year))
+with(dta,plot(StartFadeOut,Year,main="Year v. StartFadeOut"))
 abline(coef(StartFadeOut))
 
-with(dta,plot(EndFadeIn,Year))
+with(dta,plot(EndFadeIn,Year,main="Year v. EndFadeIn"))
 abline(coef(EndFadeIn))
 
 # Plot data with log
-with(dta,plot(log(Tempo),Year))
-with(dta,plot(log(Duration),Year))
-with(dta,plot(log(TimeSignature),Year))
-with(dta,plot(log(KeySignature),Year))
-with(dta,plot(log(ArtistLatitude),Year))
-with(dta,plot(log(ArtistLongitude),Year))
-with(dta,plot(log(StartFadeOut),Year))
-with(dta,plot(log(EndFadeIn),Year))
+with(dta,plot(log(Tempo),Year,main="Year v. log(Tempo)"))
+with(dta,plot(log(Duration),Year,main="Year v. log(Duration)"))
+with(dta,plot(log(TimeSignature),Year,main="Year v. log(TimeSignaure)"))
+with(dta,plot(log(KeySignature),Year,main="Year v. log(KeySignature)"))
+with(dta,plot(log(ArtistLatitude),Year,main="Year v. log(ArtistLatitude)"))
+with(dta,plot(log(ArtistLongitude),Year,main="Year v. log(ArtistLongitude)"))
+with(dta,plot(log(StartFadeOut),Year,main="Year v. log(StartFadeOut)"))
+with(dta,plot(log(EndFadeIn),Year,main="Year v. log(EndFadeIn)"))
 
 # Boxplot
-with(dta,boxplot(Year~Tempo))
-with(dta,boxplot(Year~KeySignature))
-with(dta,boxplot(Year~TimeSignature))
+with(dta,boxplot(StartFadeOut~Year,main="StartFadeOut v. Year"))
+with(dta,boxplot(EndFadeIn~Year,main="EndFadeIn v. Year"))
+with(dta,boxplot(Year~KeySignature,main="Year v. Key Signature"))
+with(dta,boxplot(Year~TimeSignature,main="Year v. Time Signature"))
