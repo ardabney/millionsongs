@@ -3,4 +3,4 @@
 
 
 library(DMwR)
-imputedDta <- knnImputation(dta, k = 5, scale = T, meth = "weighAvg", distData=NULL)
+dta <- knnImputation(dta, k = 5, scale = T, meth = "weighAvg", distData=NULL)
